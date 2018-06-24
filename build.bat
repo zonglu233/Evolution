@@ -1,1 +1,1 @@
-gitbook build
+gitbook build && xcopy C:\Users\steedos\Documents\GitHub\Evolution\_book D:\Gitbook\Evolution /s /f /h /y
