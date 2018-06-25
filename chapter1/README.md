@@ -6,31 +6,24 @@
 
 ## WEB前端开发
 
-WEB前端开发是从网页制作演变而来，名称上有很明显的时代特征。在互联网的演化进程中，网页制作是Web1.0时代的产物，早期网站主要内容都是静态，以图片和文字为主，用户使用网站的行为也以浏览为主。随着互联网技术的发展和HTML5、CSS3的应用，现代网页更加美观，交互效果显著，功能更加强大。
+- 我是谁？
 
-![](images/2.jpg)
+Web前端开发是一项很特殊的工作，涵盖的知识面非常广，既有具体的技术，又有抽象的理念。简单地说，它的主要职能就是把网站的界面更好地呈现给用户。Web前端开发需要专业的前端工程师才能做好，这方面的专业人才近几年来备受青睐。
 
-### [HTML基础课程](node1/README.md)
+![](images/3.jpg)
 
-### [CSS基础课程](node2/README.md)
+- 我从哪里来？
 
-### [JavaScript入门与实战](node3/README.md)
+  - Web1.0时代：网站主要内容都是静态，以图片和文字为主，用户使用网站的行为也以浏览为主，开发人员使用Photoshop和Dreamweaver等工具进行网页制作。
 
-### [JavaScript高级实战](node4/README.md)
+  - Web2.0时代：随着互联网技术的发展和HTML5、CSS3的应用，各种Web应用大量涌现，网站的前端由此发生了翻天覆地的变化。各类网站更加注重于用户体验和交互，所以Web2.0时期不再叫网页制作，而是叫Web前端开发。
 
-### [jQuery入门与实战](node5/README.md)
+![](images/4.jpg)
 
-### [常用库和前端框架](node6/README.md)
+## 推荐网站
 
-### [HTML5新功能和高级机制](node7/README.md)
+- [w3school 在线教程](http://www.w3school.com.cn/)
 
-### [CSS3新特性详解](node8/README.md)
+- [菜鸟教程](http://www.runoob.com/)
 
-### [实战案例](node9/README.md)
-
-
-
-
-
-
-
+- [DevDocs API Documentation](http://devdocs.io/)
