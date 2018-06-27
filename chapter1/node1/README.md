@@ -243,4 +243,19 @@ table tr td span.new{
 `<object>`* | 定义嵌入的对象
 `<param>`* | 定义对象的参数
 
-## HTML标签的属性
+## 3. HTML标签全局属性
+属性 | 描述 
+:- |:- 
+id属性 | 规定元素的唯一
+class属性 | 规定元素的类名（classname）
+style | 规定元素的行内样式（inline style）
+data-*属性<span class="new">New</span> | 用于存储页面的自定义数据
+hidden属性<span class="new">New</span> | 属性规定对元素进行隐藏
+draggable属性<span class="new">New</span> | 指定某个元素是否可以拖动
+contenteditable属性<span class="new">New</span> | 规定是否可编辑元素的内容
+tabindex | 设置元素的 Tab 键控制次序
+accesskey | 设置访问元素的键盘快捷键
+title | 规定元素的额外信息（可在工具提示中显示）
+spellcheck<span class="new">New</span> | 检测元素是否拼写错误
+dir | 设置元素中内容的文本方向
+lang | 设置元素中内容的语言代码
