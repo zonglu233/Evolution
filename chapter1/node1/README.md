@@ -1,6 +1,9 @@
 # HTML基础课程
+
 ## 1. 实例
+
 ### 1.1 源码
+
 ```
 <!DOCTYPE html>
 <html>
@@ -15,9 +18,11 @@
 </body>
 </html>
 ```
+
 ### 1.2 解析
+
 - `<!DOCTYPE html>` 声明为 HTML5 文档
-- `<html>` 元素是 HTML 页面的根元素
+- `<html>` 标签是 HTML 页面的根元素
 - `<head>` 元素包含了文档的元（meta）数据
 - `<meta>` 元素指定网页的描述，关键词，文件的最后修改时间，作者及其他元数据。
 - `<title>` 元素描述了文档的标题
@@ -28,40 +33,75 @@
 下面是一个可视化的HTML页面结构：
 
 ![](images/1.png)
->只有 `<body>`区域 (白色部分) 才会在浏览器中显示。
+
+*<strong>Tpis:</strong>只有 ` <body> `区域 (白色部分) 才会在浏览器中显示。*
 
 ## 2. 什么是HTML？
-HTML 是用来描述网页的一种语言。
 
-- HTML 指的是超文本标记语言: HyperText Markup Language
-- HTML 不是一种编程语言，而是一种标记语言
+HTML是用来描述网页的一种语言。
+
+- HTML指的是超文本标记语言: HyperText Markup Language
+- HTML不是一种编程语言，而是一种标记语言
 - 标记语言是一套标记标签 (markup tag)
-- HTML 使用标记标签来描述网页
-- HTML 文档包含了HTML 标签及文本内容
+- HTML使用标记标签来描述网页
+- HTML文档包含了 HTML 标签及文本内容
 - HTML文档也叫做 web 页面
 
-## 3. 什么是HTML标签？
-HTML 标记标签通常被称为 HTML 标签 (HTML tag)。
+## 3. HTML组成
 
-- HTML 标签是由尖括号包围的关键词，比如 <html>
-- HTML 标签通常是成对出现的，比如 <b> 和 </b>
+### 3.1 HTML标签 (tag)
+
+- HTML标签是由尖括号包围的关键词，比如 `<html>`
+- HTML标签通常是成对出现的，比如 `<b>` 和 `</b>`
 - 标签对中的第一个标签是开始标签，第二个标签是结束标签
 - 开始和结束标签也被称为开放标签和闭合标签
 
+### 3.2 HTML元素 (element)
+
+- HTML元素以开始标签起始
+- HTML元素以结束标签终止
+- 元素的内容是开始标签与结束标签之间的内容
+- 某些HTML元素具有空内容（empty content）
+- 空元素在开始标签中进行关闭（以开始标签的结束而结束）
+- 大多数HTML元素可拥有属性
+
+### 3.3 总结
+
+很多人对元素和标签不理解，会混为一谈，其实只要看懂下面的公式：
+
+**狗头 + 狗身体 + 狗尾巴 = 狗尾巴**
+
+**开始标签 + 内容 + 结束标签 = 元素**
+
+![](images/2.gif)
+
+` <p> `这就是一个标签
+
+` <p>这里是内容</p> ` 这就是一个元素
+
+也就是说元素由一个开始的标签和结束的标签组成，用来包含某些内容。
+
+*<strong>Tpis:</strong>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。` <br> ` 就是没有关闭标签的空元素 (` <br> ` 标签定义换行) 。在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。在开始标签中添加斜杠，比如 ` <br /> `，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。即使 ` <br> ` 在所有浏览器中都是有效的，但使用 ` <br/> ` 其实是更长远的保障。*
+
 ## 4. HTML网页运行原理
 
-Why?一个HTML文件，通过文本编辑器打开，是原始内容，通过Web浏览器打开，则是处理后的可视化页面。
+一个HTML文件，记事本打开是代码。浏览器打开，则是可视化页面。Why？
 
-本小节将简单介绍浏览器的工作原理，我们将看到，从我们在地址栏输入bing.com到看到Bing主页过程中都发生了什么。
+从我们在地址栏输入bing.com到看到Bing主页过程中都发生了什么？
 
 ### 4.1 文档对象模型 (Document Object Model)
+
 文档对象模型 (Document Object Model，简称DOM)，是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面 (或文档) 的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。
 
 下面是一个DOM树模型图：
 
 ![](images/1.gif)
 
+下面是红楼梦家谱图：
+![](images/2.png)
+
 ### 4.2 渲染引擎 (The Rendering Engine)
+
 Web浏览器 (如谷歌浏览器，Internet Explorer，Firefox，Safari) 读取HTML文件后，并不是直接显示的HTML标签，通过解析标签展示不同的页面效果，这些操作都归功于浏览器的渲染引擎。
 
 渲染引擎是一种对HTML文档进行解析并将其显示在页面上的工具。它负责取得网页的内容 (HTML、XML、图象等等)、整理信息 (例如加入CSS等)，以及计算网页的显示方式然后会输出至显示器或打印机。
@@ -84,24 +124,29 @@ Render树构建好了之后，将会执行布局过程，它将确定每个节�
 
 渲染引擎会遍历所有的DOM节点，并使用UI后端层绘制。
 
->渲染过程是逐步完成的，为了更好的用户体验，渲染引擎将会尽可能早的将内容呈现到屏幕上，并不会等到所有的HTML都解析完成之后再去构建和布局Render树。而是解析完一部分内容就显示一部分内容，同时，可能还在通过网络下载其余内容。
+*<strong>Tpis:</strong>渲染过程是逐步完成的，为了更好的用户体验，渲染引擎将会尽可能早的将内容呈现到屏幕上，并不会等到所有的HTML都解析完成之后再去构建和布局Render树。而是解析完一部分内容就显示一部分内容，同时，可能还在通过网络下载其余内容。*
 
 ### 4.4 主流浏览器的渲染引擎工作流程
 
 - Webkit工作流程
+
 Safari和Chrome都使用Webkit，Webkit是一款开源渲染引擎，它本来是为Linux平台研发的，后来由Apple移植到Mac及Windows上。
 
 ![](images/webkit.png)
 
 - Gecko工作流程
+
 Firefox使用Geoko——Mozilla自主研发的渲染引擎。
 
 ![](images/gecko.jpg)
 
 - 总结
+
 Webkit和Gecko属于不同，但流程基本相同。 Gecko将视觉化后的树称为“框架树”，Webkit称为“渲染树”；对于元素的排放，Webkit称为“布局layout”，gecko称为“重拍reflow”；Gecko在html解析和DOM树间添加了“内容槽”，用于生成DOM元素；将DOM树和样式信息构建渲染树的过程，Webkit称为“附加”，Gecko称为“框架结构”。
 
 ## 2. HTML标签
+
+HTML 标签是由尖括号包围的关键词
 
 <style>
 table th{
@@ -243,16 +288,26 @@ table tr td span.new{
 `<object>`* | 定义嵌入的对象
 `<param>`* | 定义对象的参数
 
-## 3. HTML标签全局属性
+## 3. 元素属性
+
+### 3.1 概述
+
+HTML 元素可以拥有属性。属性提供了有关 HTML 元素的更多的信息。
+
+属性总是以名称/值对的形式出现，比如：name="value"。
+
+属性总是在 HTML 元素的开始标签中规定。
+
+### 3.2 全局属性
 属性 | 描述 
 :- |:- 
-id属性 | 规定元素的唯一
-class属性 | 规定元素的类名（classname）
+id | 规定元素的唯一
+class | 规定元素的类名（classname）
 style | 规定元素的行内样式（inline style）
-data-*属性<span class="new">New</span> | 用于存储页面的自定义数据
-hidden属性<span class="new">New</span> | 属性规定对元素进行隐藏
-draggable属性<span class="new">New</span> | 指定某个元素是否可以拖动
-contenteditable属性<span class="new">New</span> | 规定是否可编辑元素的内容
+data-*<span class="new">New</span> | 用于存储页面的自定义数据
+hidden<span class="new">New</span> | 属性规定对元素进行隐藏
+draggable<span class="new">New</span> | 指定某个元素是否可以拖动
+contenteditable<span class="new">New</span> | 规定是否可编辑元素的内容
 tabindex | 设置元素的 Tab 键控制次序
 accesskey | 设置访问元素的键盘快捷键
 title | 规定元素的额外信息（可在工具提示中显示）
