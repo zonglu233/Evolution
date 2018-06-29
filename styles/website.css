@@ -1,0 +1,46 @@
+table th{
+	background-color: lightgrey;
+}
+table th:first-of-type {
+    width: 180px;
+}
+table tr td span.new{
+    float: right;
+    color: #fff;
+    background-color: #90b575;
+    padding-left: 1px;
+    padding-right: 1px;
+    border: 1px solid #fff;
+    outline: 1px solid #90b575;
+    line-height: 12px;
+}
+
+div.tips{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    padding: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+}
+
+span.label{
+    display: inline-block;
+    padding: .25em .4em;
+    line-height: 3;
+    color: #fff;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    font-weight: 700;
+}
+
+span.label-info{
+    background-color: #5bc0de;
+}
+
+span.label-pill{
+    padding-right: 2em;
+    padding-left: 2em;
+    border-radius: 1rem;
+}
