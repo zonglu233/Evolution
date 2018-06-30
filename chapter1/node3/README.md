@@ -1,5 +1,6 @@
 # JavaScript入门与实战
 
+JS是狗的灵魂。
 
  -  JavaScript的发展史以及未来
 
