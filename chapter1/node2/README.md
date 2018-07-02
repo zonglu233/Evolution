@@ -53,7 +53,7 @@ id为 one 的元素背景色为 yellow
 
 ## 2. 什么是 CSS？
 
-上一章节讲到 HTML 元素 (`<p>xxx</p>`) 是狗，那么 CSS 就是给狗狗美颜的，让这只狗拥有好看的皮囊。
+上一章节讲到 HTML 元素 (`<p>xxx</p>`) 是狗，那么 CSS 就是给狗美颜的，让这只狗拥有好看的皮囊。
 
 ![](images/hashiqi.png)
 
@@ -81,7 +81,7 @@ CSS 指层叠样式表 (Cascading Style Sheets)，是一种用来表现 HTML 或
 
 - 内部样式表 (Internal style sheet)
 
-当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 `<style>` 标签在文档头部定义内部样式表，就像这样:
+当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 `<style type="text/css">` 标签在文档头部定义内部样式表，就像这样:
 ```html
 <head>
     <style type="text/css">
@@ -180,7 +180,7 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
 
 `#dog002`是一个 id 选择器，它表示选择 id 属性为 dog002 的元素，选择的元素是唯一的。
 
-### 3.2 CSS选择器
+### 3.2 常用选择器
 
 除了上面讲到的 id 选择器和 class 选择器以外，CSS 还提供了各种不同的选择方案，用于选择你想要的元素。
 
@@ -196,15 +196,15 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
         <th>CSS</th>
     </tr>
     <tr>
-        <td>.<i>class</i></td>
-        <td>.intro</td>
-        <td>选择所有class="intro"的元素</td>
-        <td>1</td>
-    </tr>
-    <tr>
         <td>#<i>id</i></td>
         <td>#firstname</td>
         <td>选择所有id="firstname"的元素</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>.<i>class</i></td>
+        <td>.intro</td>
+        <td>选择所有class="intro"的元素</td>
         <td>1</td>
     </tr>
     <tr>
@@ -232,51 +232,15 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
         <td>1</td>
     </tr>
     <tr>
-        <td><i>element</i>&gt;<i>element</i></td>
-        <td>div&gt;p</td>
-        <td>选择所有父级是 &lt;div&gt; 元素的 &lt;p&gt; 元素</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>[<i>attribute</i>=<i>value</i>]</td>
-        <td>[target=-blank]</td>
-        <td>选择所有使用target="-blank"的元素</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>:link</td>
-        <td>a:link</td>
-        <td>选择所有未访问链接</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>:visited</td>
-        <td>a:visited</td>
-        <td>选择所有访问过的链接</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>:active</td>
-        <td>a:active</td>
-        <td>选择活动链接</td>
-        <td>1</td>
-    </tr>
-    <tr>
         <td>:hover</td>
         <td>a:hover</td>
-        <td>选择鼠标在链接上面时</td>
+        <td>鼠标停留在元素上面时</td>
         <td>1</td>
     </tr>
     <tr>
         <td>:focus</td>
         <td>input:focus</td>
-        <td>选择具有焦点的输入元素</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>:first-child</td>
-        <td>p:first-child</td>
-        <td>指定只有当&lt;p&gt;元素是其父级的第一个子级的样式。</td>
+        <td>具有焦点的输入元素选中时</td>
         <td>2</td>
     </tr>
     <tr>
@@ -292,6 +256,45 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
         <td>2</td>
     </tr>
 </table>
+
+### 3.3 选择器优先级
+
+现在有这样一个代码：
+```html
+<style type="text/css">
+    #dog{ color:red;}
+    .dog{ color:green;}
+</style>
+<p id="dog" class="dog">这是一只狗</p>
+```
+上面的 CSS 选择器都是针对同一个“狗” (元素)，但是设置了不同的颜色，那么这只“狗” (元素)是什么颜色的呢？
+
+- **特指度**
+要解决以上问题，我们需要引入一个概念——特指度（specificity）。特指度表示一个css选择器表达式的重要程度，可以通过一个公式来计算出一个数值，数越大，越重要。
+
+这个计算叫做“I-C-E”计算公式：
+<span class='label label-pill label-info'>
+Id * 100 + Class*10 + Element * 1 = 特指度
+</span>
+
+即针对一个 CSS 选择器，遇到一个 id 选择器就往特指度数值中加100，遇到一个 class 选择器就往特指度数值中加10，遇到一个element 选择器就往特指度数值中加1。比如：
+
+p = 1
+
+p.large = 11
+
+P#large = 101
+
+div p#large = 102
+
+div p#large ul.list = 113
+
+div p#large ul.list li = 114
+
+<div class='tips'>
+<strong>Tips!</strong><br/>
+!important优先级最高，高于上面一切<br/>* 选择器最低，低于一切。
+</div>
 
 ## 4. CSS 属性组
 
@@ -314,7 +317,7 @@ inherit | 规定应该从父元素继承颜色
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #color-1 { color:red; }
     #color-2 { color:#00ff00; }
     #color-3 { color:rgb(0,0,255); }
@@ -354,7 +357,7 @@ inherit	| 规定应该从父元素继承字体系列
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #font-family-1 { font-family:"Times New Roman",Georgia,Serif; }
 </style>
 <div id="font-family-1">这是 div1</div>
@@ -378,7 +381,7 @@ inherit	规定应该从父元素继承字体尺寸
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #font-size-1 { font-size:xx-small; }
     #font-size-2 { font-size:18px; }
     #font-size-3 { font-size:1.5em; }
@@ -422,7 +425,7 @@ inherit	| 规定应该从父元素继承字体的粗细。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #font-weight-1 { font-weight:lighter; }
     #font-weight-2 { font-weight:bold; }
     #font-weight-3 { font-weight:900; }
@@ -468,7 +471,7 @@ inherit | 指定背景颜色，应该从父元素继承
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #background-color-1 { background-color:lighter; }
     #background-color-2 { background-color:transparent; }
     #background-color-3 { background-color:yellow; }
@@ -511,7 +514,7 @@ inherit | 指定背景图像应该从父元素继承
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #background-image-1 { background-image:url(../images/bgimage.png); }
     #background-image-2 { background-image:none; }
     #background-image-3 { background-image:url(../images/bgimage.png); }
@@ -581,7 +584,7 @@ inherit | 规定应该从父元素继承 text-align 属性的值。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #text-align-1 { text-align:right; }
     #text-align-2 { text-align:center; }
     #text-align-3 { text-align:justify; }
@@ -626,7 +629,7 @@ inherit | 规定应该从父元素继承 line-height 属性的值。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #line-height-1 { line-height:2; }
     #line-height-2 { line-height:30px; }
     #line-height-3 { line-height:100%; }
@@ -667,7 +670,7 @@ inherit | 规定应该从父元素继承 letter-spacing 属性的值。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #letter-spacing-1 { letter-spacing:5px; }
     #letter-spacing-2 { letter-spacing:-5px; }
     #letter-spacing-3 { letter-spacing:10px; }
@@ -710,7 +713,7 @@ inherit | 规定应该从父元素继承 text-indent 属性的值。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #text-indent-1 { text-indent:5px; }
     #text-indent-2 { text-indent:50%; }
     #text-indent-3 { text-indent:10px; }
@@ -761,9 +764,15 @@ inset | 定义 3D inset 边框。其效果取决于 border-color 的值。
 outset | 定义 3D outset 边框。其效果取决于 border-color 的值。
 inherit | 规定应该从父元素继承边框样式。
 
+border-style的属性值在不同浏览器会有些许差别。比较稳定的属性值是：solid、dashed、dotted。
+
+如果公司里面的设计师是处女座的，追求极高的页面还原度，那么不能使用css来制作边框。就要用到图片，就要切图了。比如border:10px ridge red;这个属性，在chrome和firefox、IE中有细微差别：（因为可以显示出效果，因此并不是兼容性问题，只是有细微差别而已）
+
+![](images/border.png)
+
 *源码*
 ```html
-<style>
+<style type="text/css">
     #border-style-1 {
         border-style:dotted dashed solid double;
         height: 100px;
@@ -793,7 +802,7 @@ inherit | 规定应该从父元素继承边框宽度。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #border-width-1 {
         border-style:solid;
         border-width:thin medium thick 10px;
@@ -822,7 +831,7 @@ inherit | 指定边框的颜色，应该从父元素继承
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #border-color-1 {
         border-style:solid;
         border-color:red blue;
@@ -854,7 +863,7 @@ inherit	指定应该从父元素继承border属性值
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     .border { margin: 10px; }
     #border-1 { border:5px solid red; }
     #border-2 { border:solid red; }
@@ -888,7 +897,7 @@ inherit	规定应该从父元素继承 outline 属性的设置。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #outline-1 { border:1px solid red; outline:green dotted thick; }
 </style>
 <div id="border-1">DOBE工场</div>
@@ -930,7 +939,7 @@ katakana-iroha | 标记是：I, RO, HA, NI, HO, HE, TO, 等。（日文片假名
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #list-style-type-1 { list-style-type:circle;}
     #list-style-type-2 { list-style-type:upper-latin;}
 </style>
@@ -971,7 +980,7 @@ inherit | 规定应该从父元素继承 list-style-position 属性的值。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #list-style-position-1 { list-style-position:inside;}
     #list-style-position-2 { list-style-position:outside;}
 </style>
@@ -1014,7 +1023,7 @@ inherit | 规定应该从父元素继承 list-style-image 属性的值。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #list-style-image-1 { list-style-image:url(../images/tubiao.png);}
 </style>
 <ul id="list-style-image-1">
@@ -1050,7 +1059,7 @@ list-style 简写属性在一个声明中设置所有的列表属性。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #list-style-1 { list-style:square url(../images/tubiao.png);}
 </style>
 <ul id="list-style-1">
@@ -1068,7 +1077,7 @@ list-style 简写属性在一个声明中设置所有的列表属性。
     </ul>
 </div>
 
-### 4.7 边距属性
+### 4.7 外边距属性 & 内填充属性
 
 - **margin**
 
@@ -1088,7 +1097,7 @@ inherit	规定应该从父元素继承外边距。
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #margin-1 {
         margin:10px;
         background-color: lightgreen;
@@ -1108,7 +1117,7 @@ inherit	规定应该从父元素继承外边距。
 
 - **padding**
 
-padding 简写属性在一个声明中设置所有填充属性。该属性可以有1到4个值。
+padding 简写属性在一个声明中设置所有填充属性。该属性可以有1到4个值。padding 也可叫做内边距。
 
 属性值 | 描述
 :--| :--
@@ -1118,12 +1127,12 @@ inherit | 指定应该从父元素继承padding
 
 <div class='tips'>
 <strong>Tips!</strong><br/>
-可根据上、右、下、左分别设置不同的内边距。<br/>padding-top - 上内边距<br />padding-right - 上右边距<br />padding-bottom - 下内边距<br />padding-left - 左内边距<br />
+可根据上、右、下、左分别设置不同的内填充。<br/>padding-top - 上内填充<br />padding-right - 上右填充<br />padding-bottom - 下内填充<br />padding-left - 左内填充<br />
 </div>
 
 *源码*
 ```html
-<style>
+<style type="text/css">
     #padding-1 {
         padding:10px;
         background-color: lightgreen;
@@ -1143,9 +1152,350 @@ inherit | 指定应该从父元素继承padding
 
 ## 5. 盒子模型
 
-## 块状元素与内联元素
+盒子模型，英文即box model。无论是div、span、还是a都是盒子。
 
-## 浮动与清除浮动
+但是，图片、表单元素一律看作是文本，它们并不是盒子。这个很好理解，比如说，一张图片里并不能放东西，它自己就是自己的内容。
+
+在一个 HTML 文档中，每个元素都被表示为一个矩形的盒子。盒子由元素的内容，内填充，边框，外边距组成。
+
+就像我们收到的快递，本来买了一个小小的iphone，收到的确实那么大一个盒子。因为iphone白色的包装盒和iphone机器之间有间隔层（内边距），iphone白色盒子有厚度，虽然很薄（边框），盒子和快递箱子之间还有一层泡沫板（外边距）。这就是一个典型的盒子。
+
+通过盒子的属性，确定盒子的尺寸、位置是渲染引擎的目标。
+
+### 5.1 盒子的区域
+
+一个盒子中主要的属性就5个：width、height、padding、border、margin。
+
+盒子模型的示意图：
+
+![](images/photo.png)
+
+下面有这样一个代码：
+```html
+<style type="text/css">
+    .dobe-box-1, .dobe-box-2{
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+        padding: 20px;
+        background-color: red;
+    }
+    .dobe-box-1-1,.dobe-box-1-2{
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        padding: 10px;
+        background-color: gold;
+    }
+</style>
+<div class="dobe-box-1">
+    DOBE工场1
+    <div class="dobe-box-1-1"></div>
+    <div class="dobe-box-1-2"></div>
+</div>
+<div class="dobe-box-2">
+    DOBE工场2
+</div>
+```
+展示的效果是：
+<div class="preview-code">
+    <div class="dobe-box-1">
+        DOBE工场1
+        <div class="dobe-box-1-1"></div>
+        <div class="dobe-box-1-2"></div>
+    </div>
+    <div class="dobe-box-2">
+        DOBE工场2
+    </div>
+</div>
+
+通过审查元素，我们可以看到，我们设置的 width 和 height 只是内容区域的宽高，每个盒子有自己的真实占有宽高。
+
+我们会发现，下面这个公式：
+
+<span class='label label-pill label-info'>
+真实宽度 = 左边距 + 左边框 + 左填充 + 内容宽度 + 右填充 + 右边框 + 右边距<br />真实高度 = 上边距 + 上边框 + 上填充 + 内容高度 + 下填充 + 下边框 + 下边距
+</span>
+
+<div class='tips'>
+<strong>Tips!</strong>宽(高)度和真实占有宽(高)度，不是一个概念。
+</div>
+
+### 5.2 固定盒子宽高
+
+增加内边距、边框和外边距不会影响内容区域的宽高，但是会增加盒子的总宽高。如何能够直接固定盒子的宽高呢？答案就是：box-sizing:border-box
+
+div 设置了 box-sizing:border-box 之后，div 的 width 属性就不是内容区域的宽度，而是整个盒子的宽度。
+
+比如下面的代码：
+```html
+<style type="text/css">
+    .dobe-box{
+        height: 200px;
+        width: 200px;
+        margin: 0px;
+        padding: 0px;
+    }
+    .dobe-box-sizing {
+        width:100px;
+        height: 100px;
+        border: 5px solid;
+        padding: 10px;
+        float:left;
+        box-sizing:border-box;
+    }
+    .dobe-box-sizing-1{
+        background-color: red;
+    }
+    .dobe-box-sizing-2{
+        background-color: green;
+    }
+</style>
+<div class="dobe-box-sizing-1">
+    DOBE工场
+</div>
+```
+展示的效果是：
+<div class="preview-code">
+    <div class="dobe-box">
+        <div class="dobe-box-sizing dobe-box-sizing-1">
+            DOBE工场1
+        </div>
+        <div class="dobe-box-sizing dobe-box-sizing-2">
+            DOBE工场2
+        </div>
+    </div>
+</div>
+
+通过审查元素我们可以发现，dobe-box-sizing 设置的 width 不是内容的宽度，而是整个盒子的真实占有宽度。
+
+这样就可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。
+
+<div class='tips'>
+<strong>Tips!</strong>如果想保持一个盒子的真实占有宽度不变，那么加width的时候就要减padding。加padding的时候就要减width。因为盒子变胖了是灾难性的，这会把别的盒子挤下去。
+</div>
+
+建议大家在为系统写css时候，第一个样式是：
+```css
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+```
+大名鼎鼎的bootstrap也把box-sizing:border-box加入到它的 * 选择器中，我们为什么不这样做呢？
+
+### 5.3 纵向 margin 的重叠
+
+如果两个 `<div>` 的 margin 都是 20px，那么这两个 `<div>` 的纵向距离是多少？
+
+按常理来说应该是 20 + 20 = 40px，但是答案仍然是 20px。因为纵向的margin是会重叠的，大的会把小的“吃掉”。这就是 margin 的一大特性——纵向重叠。
+
+比如下面的代码：
+```html
+<style type="text/css">
+    .dobe-box{
+        height: 200px;
+        width: 200px;
+        margin: 0px;
+        padding: 0px;
+    }
+    .dobe-box-margin-height {
+        width:180px;
+        height: 60px;
+        border: 10px solid;
+        padding: 10px;
+        box-sizing:border-box;
+    }
+    .dobe-box-margin-height-1{
+        background-color: red;
+        margin: 20px;
+    }
+    .dobe-box-margin-height-2{
+        background-color: green;
+        margin: 20px;
+    }
+</style>
+<div class="dobe-box-sizing-1">
+    DOBE工场
+</div>
+```
+展示的效果是：
+<div class="preview-code">
+    <div class="dobe-box">
+        <div class="dobe-box-margin-height dobe-box-margin-height-1">
+            DOBE工场1
+        </div>
+        <div class="dobe-box-margin-height dobe-box-margin-height-2">
+            DOBE工场2
+        </div>
+    </div>
+</div>
+
+通过审查元素我们发现，两个 `<div>` 的纵向距离仍是 20px。
+
+## 6. 浮动与清除浮动
+
+在css2里，浮动（float）这个属性是个经典又诡异的一个属性，历来对它的争议就不断。
+
+### 6.1 浮动
+
+float 这个属性顾名思义，既然叫浮动，咱们不妨把它与小鱼在水中的浮动联系起来。
+
+我们可以这样假设，一个 HTML 文档就是一个水箱，文档中的元素就是各种各样的小鱼。而这水箱只有一层水，所以小鱼没有办法上下浮动，所有的鱼都在同一层游泳，他们都有各自的空间，而且也没有任何的上下层交叠。就像如下的示意图：
+
+![](images/fish.png)
+
+float 浮动，就恰好使原本在文档流这层水中的元素浮于水的表面（即脱离的文档流），说法不一定准确，因为浮动是否是真正的脱离的文档流还有待考究。
+
+因为一旦脱离的文档流后，该元素的占位空间自然也就没有了，所谓的没有占位空间，那么就应该是元素可以自由的交叠，像 position:absolute 的那种。也就是说，理想的情况，应该是这只鱼浮在水面上，下面的鱼可以在他下面游泳。比如这样：
+
+![](images/fish_zhedie.png)
+
+但是事实并非如此。浮动的元素，高度会塌陷，这可以理解为占位空间消失造成的。
+
+但是，浮动的元素宽度仍然还在。也就是说，浮动的元素宽度处在一个“半塌陷”的状态，为什么说是“半塌陷”呢？下面以实例讲解一下。
+
+有这样的一个代码：
+```html
+<style type="text/css">
+    .fish-box {
+        min-height: 100px;
+        padding: 10px;
+        border: 2px solid grey;
+        background-color: lightblue;
+    }
+    #fish-float-1 {
+        width: 200px;
+        height: 100px;
+        background-color: #3A87AD;
+    }
+</style>
+<div class="fish-box">
+    <div id="fish-float-1"></div>
+    <div id="fish-2">DOBE工场</div>
+</div>
+```
+<div class="preview-code">
+    <div class="fish-box">
+        <div id="fish-float-1"></div>
+        <div id="fish-2">DOBE工场</div>
+    </div>
+</div>
+
+我们打开浏览器审查元素，设置 `<div id="fish-float-1"></div>`如下：
+```css
+float: left;
+/* position: absolute;
+visibility: hidden; */
+```
+
+这是，我们发现，高度塌陷了，但是宽度貌似没有塌陷。也就是说，宽度的占位还在，因为`<div id="fish-2">DOBE工场</div>`并没有在 `<div id="fish-float-1"></div>`的下面重叠，还是能显示的。
+
+但是，再设置 .fish-2 的外边距为 margin-left: 250px;
+
+我们发现，它并不是距离 .fish-float-1 为 250px。
+
+所以说，这就是半塌陷状况。
+
+按本人的理解，其实可以这样解释这个现象，这里要引入一个自创的词：“占位空间层级”。是的，引入占位空间层级这个概念之后，针对float这个元素，我们不妨可以这样假定：没有浮动的元素（即在文档流中的）的占位空间层级为0,有浮动的元素（指float:left或right;不包括none）的占位空间层级为1。这样就可以解释刚才`<div id="fish-2">DOBE工场</div>`的 padding 和 margin 值都是在层级为0的占位空间中解析的，而所有的浮动元素由于都在同一个层级的占位空间中，所以浮动元素之间的margin 和 padding 值的解析是和我们正常理解是一致的。
+
+至于为什么 `<div id="fish-2">DOBE工场</div>` 不和 `<div id="fish-float-1"></div>` 浮动块重叠，那是因为占位空间层级的分界线和文档流基线不是同一个！以下为一个简易的示意图：
+
+![](images/fish_taxian.png)
+
+### ### 6.2 清除浮动
+
+说了这么多浮动的东西，其实我们平时接触最多的问题，还是清除浮动的问题。当初 CSS 的发明者之所以会创造 clear 这个属性，就是因为float 太过诡异，与文档流的层级标准都不统一，导致很难包容 float所导致的负面影响，所以只能再造一个 clear 属性，强制清除 float带来的后遗症。
+
+说到这里，我很同意一为同仁说的，我们平时说的“清除浮动”准确的说应该是“清除浮动造成的影响”，真正的清除浮动应该是 float:none; 
+
+说到清除浮动造成的影响，又不得不说一下Dom元素的“包裹性”，因为在我们的实际编码中，用 clear 来清除浮动已经很少见了。因为经过人们不懈的实践，发现用包裹性来清除浮动造成的影响是更好的一种方式。
+
+- 通过overflow的方式
+
+```css
+.overflow-clear{
+    overflow:auto;/*或者 hidden,scroll,不包括visible */
+    _height:1%; /*设置高度是为了ie6获取haslayout */
+}
+```
+
+- display 的方式
+
+```css
+.display-clear{
+    display:inline-block;
+}
+```
+
+- position的方式
+
+```css
+.position-clear{
+    position:absolute;
+}
+```
+
+- 浮动方式
+
+```css
+.float-clear{
+    float:left; /*或者right，不是none就行*/
+}
+```
+
+- zoom 的方式
+
+```css
+.zoom-clear{
+    zoom:1;/* only for IE6.7 因为他们haslayout，ie8以后和标准浏览器都弱化了haslayout */
+}
+```
+
+- after伪类+content方式
+
+```css
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+.clearfix {height: 1%;}
+/* End hide from IE-mac */
+```
+
+上面几种方式都有清除浮动影响的作用，前四种是和最后一种在ie678和其他标准浏览器下都有效地方法，zoom因为用到了ie的haslayout，所以只在ie6/7的内核下才有效。
+
+```html
+<div class="overflow-clear" style="padding:10px;border:2px solid #999">
+    <div style="float:left;width:200px;height:200px;background:#ccc;"></div>
+    <p style="margin:0;padding-left:250px">我是文案</p>
+</div>
+```
+
+可见确实是清除了浮动造成的影响。同样的可以试试其他的几种方式。
+
+清除浮动原理-包裹性：
+
+说到包裹性，在这里面的鼻祖应该算是diaplay:inline-block;其他的像overflow，position:absolute,float这几个产生包裹性的原因，本质应该都是因为他们使Dom元素具有了类似inline-block的性质，所以，凡是设置了像display:inline-block或者overflow:hidden/scroll/auto或者position:absolute或者float:left/right这几个属性时，他们具有的包裹性都可以清除他们子元素浮动造成的影响。
+
+-haslayout
+
+　　这是ie私有的一个东西，不过随着ie8像标准浏览器靠近，它对haslayout的解析也弱化了很多。我们来看看用overflow，zoom，和after伪类这几个清除浮动的方式。
+
+　　通过测试可以看到，display:inline-block,position:absolute,float:left/right 都把包裹性演绎的很好，但是overflow对包裹性的演绎没那么到位，所以导致ie6下必须强制获取Dom元素的haslayout才能生效。
+
+　　在ie下，只要我们对一个非inline级别的元素设置width或者height都可以触发他的haslayout，而且，在windows的ie下有个“auto-clearing”的特性：只要给容器一个尺寸，它能使容器自 动扩展以便适应它所包含的内容，即便给它的尺寸非常小，所以1%的height在任何情况都是扩展高度适应它的内容。这就是为什么在第一种方法中加了个ie6的hack是height:1%;原因。
+
+　　同理，最后一个通过after伪类+content的方式最后要加个height:1%;也是这个原因。因为:after+content 只有在ie8和标准浏览器中支持。
+
+　　那么zoom，这个就不用多说了，这个是触发haslayout最典型的一种方式...
+
+
 
 ## 定位
 

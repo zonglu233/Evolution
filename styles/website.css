@@ -132,3 +132,67 @@ span.label-pill{
 .span-text{ background-color: yellow;}
 #margin-1 { margin: 10px; background-color: lightgreen;}
 #padding-1 { padding:10px; background-color: lightgreen;}
+
+.dobe-box-1, .dobe-box-2{
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    padding: 20px;
+    background-color: red;
+}
+.dobe-box-1-1,.dobe-box-1-2{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    padding: 10px;
+    background-color: gold;
+}
+
+.dobe-box{
+    height: 200px;
+    width: 200px;
+    margin: 0px;
+    padding: 0px;
+}
+.dobe-box-sizing {
+    width:100px;
+    height: 100px;
+    border: 5px solid;
+    padding: 10px;
+    float:left;
+    box-sizing:border-box;
+}
+.dobe-box-sizing-1{
+    background-color: red;
+}
+.dobe-box-sizing-2{
+    background-color: green;
+}
+
+.dobe-box-margin-height {
+    width:180px;
+    height: 60px;
+    border: 10px solid;
+    padding: 10px;
+    box-sizing:border-box;
+}
+.dobe-box-margin-height-1{
+    background-color: red;
+    margin: 20px;
+}
+.dobe-box-margin-height-2{
+    background-color: green;
+    margin: 20px;
+}
+
+.fish-box {
+    min-height: 100px;
+    padding: 10px;
+    border: 2px solid grey;
+    background-color: lightblue;
+}
+#fish-float-1 {
+    width: 200px;
+    height: 100px;
+    background-color: #3A87AD;
+}
