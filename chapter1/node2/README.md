@@ -1068,6 +1068,65 @@ list-style 简写属性在一个声明中设置所有的列表属性。
     </ul>
 </div>
 
+### 4.7 边距属性
+
+- 外边距
+
+margin简写属性在一个声明中设置所有外边距属性。该属性可以有1到4个值。
+
+属性值 | 描述
+:--| :--
+auto | 浏览器计算外边距。
+*length* | 规定以具体单位计的外边距值，比如像素、厘米等。默认值是 0px。
+% | 规定基于父元素的宽度的百分比的外边距。
+inherit	规定应该从父元素继承外边距。
+
+<div class='tips'>
+<strong>Tips!</strong><br/>
+可根据上、右、下、左分别设置不同的外边距。<br/>margin-top - 上外边距<br />margin-right - 上右边距<br />margin-bottom - 下外边距<br />margin-left - 左外边距<br />
+</div>
+
+*源码*
+```html
+<style>
+    
+</style>
+
+```
+*效果*
+<div class="preview-code">
+    
+</div>
+
+
+
+- 内边距
+
+padding 简写属性在一个声明中设置所有填充属性。该属性可以有1到4个值。
+
+属性值 | 描述
+:--| :--
+length* | 规定以具体单位计的填充值，比如像素、厘米等。默认值是 0px
+% | 规定基于父元素的宽度的百分比的填充
+inherit | 指定应该从父元素继承padding
+
+<div class='tips'>
+<strong>Tips!</strong><br/>
+可根据上、右、下、左分别设置不同的内边距。<br/>padding-top - 上内边距<br />padding-right - 上右边距<br />padding-bottom - 下内边距<br />padding-left - 左内边距<br />
+</div>
+
+*源码*
+```html
+<style>
+    
+</style>
+
+```
+*效果*
+<div class="preview-code">
+    
+</div>
+
 ## 盒子模型
 
 ## 块状元素与内联元素
