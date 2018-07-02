@@ -1,11 +1,12 @@
 table th{
-	background-color: lightgrey;
+    background-color: lightgrey;
+    text-align:left;
 }
 table th:first-of-type {
     width: 180px;
 }
-table tr td span.new{
-    float: right;
+span.new{
+    margin-left: 1px;
     color: #fff;
     background-color: #90b575;
     padding-left: 1px;
@@ -13,6 +14,14 @@ table tr td span.new{
     border: 1px solid #fff;
     outline: 1px solid #90b575;
     line-height: 12px;
+}
+
+span.inportment{
+    color: #d9534f;
+}
+
+table tr td span.new,table tr td span.inportment{
+    float: right;
 }
 
 div.tips{
@@ -44,3 +53,57 @@ span.label-pill{
     padding-left: 2em;
     border-radius: 1rem;
 }
+
+
+
+.preview-code {
+    padding: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid lightgray;                
+}
+#color-1 { color:red; }
+#color-2 { color:#00ff00; }
+#color-3 { color:rgb(0,0,255); }
+#color-4 { color:inherit; }
+
+#font-family-1 { font-family:"Times New Roman",Georgia,Serif; }
+
+#font-size-1 { font-size:xx-small; }
+#font-size-2 { font-size:18px; }
+#font-size-3 { font-size:1.5em; }
+#font-size-4 { font-size:inherit; }
+
+#font-weight-1 { font-weight:lighter; }
+#font-weight-2 { font-weight:bold; }
+#font-weight-3 { font-weight:900; }
+#font-weight-4 { font-weight:inherit; }
+
+#background-color-1 { background-color:#64854c; }
+#background-color-2 { background-color:transparent; }
+#background-color-3 { background-color:yellow; }
+#background-color-4 { background-color:inherit; }
+
+#background-image-1 { background-image:url(../images/bgimage.png); }
+#background-image-2 { background-image:none; }
+#background-image-3 { background-image:url(../images/bgimage.png); }
+#background-image-4 { background-image:inherit; }   
+
+#text-align-1 { text-align:right; }
+#text-align-2 { text-align:center; }
+#text-align-3 { text-align:justify; }
+#text-align-4 { text-align:inherit; }
+
+#line-height-1 { line-height:2; }
+#line-height-2 { line-height:30px; }
+#line-height-3 { line-height:100%; }
+#line-height-4 { line-height:inherit; }
+
+#letter-spacing-1 { letter-spacing:5px; }
+#letter-spacing-2 { letter-spacing:-5px; }
+#letter-spacing-3 { letter-spacing:10px; }
+#letter-spacing-4 { letter-spacing:inherit; }
+
+#text-indent-1 { text-indent:5px; }
+#text-indent-2 { text-indent:50%; }
+#text-indent-3 { text-indent:10px; }
+#text-indent-4 { text-indent:inherit; }
