@@ -373,7 +373,9 @@ Webkit 和 Gecko 属于不同，但流程基本相同。 Gecko 将视觉化后�
 | lang                                        | 设置元素中内容的语言代码                 |
 
 ### 3.3 源码示例
+
 *源码*
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -484,6 +486,9 @@ Webkit 和 Gecko 属于不同，但流程基本相同。 Gecko 将视觉化后�
 	</body>
 </html>
 ```
+
+*效果*
+
 <div class="preview-code">
     <div>
         <h1>格式标签</h1>
