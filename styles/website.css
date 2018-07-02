@@ -128,3 +128,7 @@ span.label-pill{
 #list-style-image-1 { list-style-image:url(../images/tubiao.png);}
 
 #list-style-1 { list-style:square url(../images/tubiao.png);}
+
+.span-text{ background-color: yellow;}
+#margin-1 { margin: 10px; background-color: lightgreen;}
+#padding-1 { padding:10px; background-color: lightgreen;}

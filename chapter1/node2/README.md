@@ -1070,9 +1070,9 @@ list-style 简写属性在一个声明中设置所有的列表属性。
 
 ### 4.7 边距属性
 
-- 外边距
+- **margin**
 
-margin简写属性在一个声明中设置所有外边距属性。该属性可以有1到4个值。
+margin 简写属性在一个声明中设置所有外边距属性。该属性可以有1到4个值。
 
 属性值 | 描述
 :--| :--
@@ -1089,18 +1089,24 @@ inherit	规定应该从父元素继承外边距。
 *源码*
 ```html
 <style>
-    
+    #margin-1 {
+        margin:10px;
+        background-color: lightgreen;
+        }
+    .span-text{ background-color: yellow;}
 </style>
-
+<div class="margin-1">
+    <span class="span-text">DOBE工场</span>
+</div>
 ```
 *效果*
 <div class="preview-code">
-    
+    <div id="margin-1">
+        <span class="span-text">DOBE工场</span>
+    </div>
 </div>
 
-
-
-- 内边距
+- **padding**
 
 padding 简写属性在一个声明中设置所有填充属性。该属性可以有1到4个值。
 
@@ -1118,16 +1124,24 @@ inherit | 指定应该从父元素继承padding
 *源码*
 ```html
 <style>
-    
+    #padding-1 {
+        padding:10px;
+        background-color: lightgreen;
+        }
+    .span-text{ background-color: yellow;}
 </style>
-
+<div class="padding-1">
+    <span class="span-text">DOBE工场</span>
+</div>
 ```
 *效果*
 <div class="preview-code">
-    
+    <div id="padding-1">
+        <span class="span-text">DOBE工场</span>
+    </div>
 </div>
 
-## 盒子模型
+## 5. 盒子模型
 
 ## 块状元素与内联元素
 
