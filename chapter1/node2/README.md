@@ -184,11 +184,9 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
 
 除了上面讲到的 id 选择器和 class 选择器以外，CSS 还提供了各种不同的选择方案，用于选择你想要的元素。
 
-下面是 CSS 提供一些基本的选择器。
+下面是 CSS 提供一些常用的基本选择器。
 
-<span class="inportment">❤</span> - 常用的重要选择器
-
-*参考链接：http://www.runoob.com/cssref/css-selectors.html*
+*如需了解更多选择器，请访问：http://www.runoob.com/cssref/css-selectors.html*
 
 <table class="table-css-select">
     <tr>
@@ -198,13 +196,13 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
         <th>CSS</th>
     </tr>
     <tr>
-        <td>.<i>class</i><span class="inportment">❤</span></td>
+        <td>.<i>class</i></td>
         <td>.intro</td>
         <td>选择所有class="intro"的元素</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>#<i>id</i><span class="inportment">❤</span></td>
+        <td>#<i>id</i></td>
         <td>#firstname</td>
         <td>选择所有id="firstname"的元素</td>
         <td>1</td>
@@ -216,79 +214,79 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
         <td>2</td>
     </tr>
     <tr>
-        <td><i>element</i><span class="inportment">❤</span></td>
+        <td><i>element</i></td>
         <td>p</td>
         <td>选择所有&lt;p&gt;元素</td>
         <td>1</td>
     </tr>
     <tr>
-        <td><i>element,element</i><span class="inportment">❤</span></td>
+        <td><i>element,element</i></td>
         <td>div,p</td>
         <td>选择所有&lt;div&gt;元素和&lt;p&gt;元素</td>
         <td>1</td>
     </tr>
     <tr>
-        <td><i>element</i> <i>element</i><span class="inportment">❤</span></td>
+        <td><i>element</i> <i>element</i></td>
         <td>div p</td>
         <td>选择&lt;div&gt;元素内的所有&lt;p&gt;元素</td>
         <td>1</td>
     </tr>
     <tr>
-        <td><i>element</i>&gt;<i>element</i><span class="inportment">❤</span></td>
+        <td><i>element</i>&gt;<i>element</i></td>
         <td>div&gt;p</td>
         <td>选择所有父级是 &lt;div&gt; 元素的 &lt;p&gt; 元素</td>
         <td>2</td>
     </tr>
     <tr>
-        <td>[<i>attribute</i>=<i>value</i>]<span class="inportment">❤</span></td>
+        <td>[<i>attribute</i>=<i>value</i>]</td>
         <td>[target=-blank]</td>
         <td>选择所有使用target="-blank"的元素</td>
         <td>2</td>
     </tr>
     <tr>
-        <td>:link<span class="inportment">❤</span></td>
+        <td>:link</td>
         <td>a:link</td>
         <td>选择所有未访问链接</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>:visited<span class="inportment">❤</span></td>
+        <td>:visited</td>
         <td>a:visited</td>
         <td>选择所有访问过的链接</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>:active<span class="inportment">❤</span></td>
+        <td>:active</td>
         <td>a:active</td>
         <td>选择活动链接</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>:hover<span class="inportment">❤</span></td>
+        <td>:hover</td>
         <td>a:hover</td>
         <td>选择鼠标在链接上面时</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>:focus<span class="inportment">❤</span></td>
+        <td>:focus</td>
         <td>input:focus</td>
         <td>选择具有焦点的输入元素</td>
         <td>2</td>
     </tr>
     <tr>
-        <td>:first-child<span class="inportment">❤</span></td>
+        <td>:first-child</td>
         <td>p:first-child</td>
         <td>指定只有当&lt;p&gt;元素是其父级的第一个子级的样式。</td>
         <td>2</td>
     </tr>
     <tr>
-        <td>:before<span class="inportment">❤</span></td>
+        <td>:before</td>
         <td>p:before</td>
         <td>在每个&lt;p&gt;元素之前插入内容</td>
         <td>2</td>
     </tr>
     <tr>
-        <td>:after<span class="inportment">❤</span></td>
+        <td>:after</td>
         <td>p:after</td>
         <td>在每个&lt;p&gt;元素之后插入内容</td>
         <td>2</td>
