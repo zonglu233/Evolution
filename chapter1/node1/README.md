@@ -433,7 +433,10 @@ Webkit 和 Gecko 属于不同，但流程基本相同。 Gecko 将视觉化后�
 			</table>
 		</div>
 		<hr />
-		
+		<div>
+			<h1>图像标签</h1>
+			<a href="http://www.runoob.com/try/try.php?filename=tryhtml_areamap">参考菜鸟示例</a>
+		</div>
 		<div>
 			<h1>form表单及控件</h1>
 			<div>
@@ -442,29 +445,19 @@ Webkit 和 Gecko 属于不同，但流程基本相同。 Gecko 将视觉化后�
 				<p>method:post/get的区别这一部分内容属于后端程序员考虑的问题。</p>
 				<p>label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。 </p>
 			</div>
-			<!--
-				•action ：浏览者输入的数据被传送到的地方,比如一个PHP页面(save.php)。
- 				•method ： 数据传送的方式（get/post）。
-			-->
 			<form method="post" action="save.php"  style="border: dashed;padding: 6px;">
 				<label for="username">姓名:</label>
-				<input type="text" name="username" />  
-				
+				<input type="text" name="username" />
 				<br /><br />
-				
 				<label>性别：</label>
 				<label for="male">男</label>
 				<input type="radio" name="gender" id="male" />
 				<label for="female">女</label>
 				<input type="radio" name="gender" id="female" />
-				
 				<br /><br />
-				
 				<label for="email">输入你的邮箱地址</label>
 				<input type="email" id="email" placeholder="Enter email">
-				
 				<br /><br />
-				
 				你对什么运动感兴趣：
 				<label for="run">慢跑</label>
 				<input type="checkbox" name="sports" id="run">
@@ -472,33 +465,26 @@ Webkit 和 Gecko 属于不同，但流程基本相同。 Gecko 将视觉化后�
 				<input type="checkbox" name="sports" id="climb">
 				<label for="basketball">篮球</label>
 				<input type="checkbox" name="sports" id="basketball">
-				
 				<br /><br />
-				
 				<label>个人简介：</label><br>  
-            	<textarea cols="40" rows="10">在这里输入内容...</textarea><br> 
-				
+				<textarea cols="40" rows="10">在这里输入内容...</textarea><br>
 				<br /><br />
-				
 				<label>爱好:</label>  
-	            <select>  
-	                <option value="看书" selected="selected">看书</option>  
-	                <option value="旅游">旅游</option>  
-	                <option value="运动">运动</option>  
-	                <option value="购物">购物</option>  
-	            </select> 
-				
+				<select>  
+					<option value="看书" selected="selected">看书</option>  
+					<option value="旅游">旅游</option>  
+					<option value="运动">运动</option>  
+					<option value="购物">购物</option>  
+				</select> 
 				<br /><br />
-				
-				 <input type="submit" value="确定"  />  
-            	<input type="reset" value="重置"  />  
-            
+				<input type="submit" value="确定"  />  
+				<input type="reset" value="重置"  />
 			</form>
 		</div>
 	</body>
 </html>
 ```
-<div>
+<div class="preview-code">
     <div>
         <h1>格式标签</h1>
         <table>
@@ -550,6 +536,10 @@ Webkit 和 Gecko 属于不同，但流程基本相同。 Gecko 将视觉化后�
         </table>
     </div>
     <hr />
+	<div>
+		<h1>图像标签</h1>
+		<a href="http://www.runoob.com/try/try.php?filename=tryhtml_areamap">参考菜鸟示例</a>
+	</div>
     <div>
         <h1>form表单及控件</h1>
         <div>
