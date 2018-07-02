@@ -741,11 +741,332 @@ inherit | 规定应该从父元素继承 text-indent 属性的值。
 
 ### 4.5 边框属性
 
-## 使用CSS格式化列表
+- **border-style**
 
-## a标签
+border-style属性设置一个元素的四个边框的样式。
 
-## 使用CSS美化标签
+此属性可以有一到四个值。四个值赋值分别是：上-右-下-左 的顺时针方式。
+
+属性值 | 描述
+:--| :--
+none | 定义无边框。
+hidden | 与 "none" 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。
+dotted | 定义点状边框。在大多数浏览器中呈现为实线。
+dashed | 定义虚线。在大多数浏览器中呈现为实线。
+solid | 定义实线。
+double | 定义双线。双线的宽度等于 border-width 的值。
+groove | 定义 3D 凹槽边框。其效果取决于 border-color 的值。
+ridge | 定义 3D 垄状边框。其效果取决于 border-color 的值。
+inset | 定义 3D inset 边框。其效果取决于 border-color 的值。
+outset | 定义 3D outset 边框。其效果取决于 border-color 的值。
+inherit | 规定应该从父元素继承边框样式。
+
+*源码*
+```html
+<style>
+    #border-style-1 {
+        border-style:dotted dashed solid double;
+        height: 100px;
+        width: 200px;
+        }
+</style>
+<div id="border-style-1">DOBE工场</div>
+```
+*效果*
+<div class="preview-code">
+    <div id="border-style-1">DOBE工场</div>
+</div>
+
+- **border-width**
+
+border-width属性设置一个元素的四个边框的宽度。
+
+此属性可以有一到四个值。
+
+属性值 | 描述
+:--| :--
+thin | 定义细的边框。
+medium | 默认。定义中等的边框。
+thick | 定义粗的边框。
+*length* | 允许您自定义边框的宽度。
+inherit | 规定应该从父元素继承边框宽度。
+
+*源码*
+```html
+<style>
+    #border-width-1 {
+        border-style:solid;
+        border-width:thin medium thick 10px;
+        height: 100px;
+        width: 200px;
+        }
+</style>
+<div id="border-width-1">DOBE工场</div>
+```
+*效果*
+<div class="preview-code">
+    <div id="border-width-1">DOBE工场</div>
+</div>
+
+- **border-color**
+
+border-color属性设置一个元素的四个边框颜色。
+
+此属性可以有一到四个值。
+
+属性值 | 描述
+:--| :--
+*color* | 指定背景颜色
+transparent | 指定边框的颜色应该是透明的。这是默认
+inherit | 指定边框的颜色，应该从父元素继承
+
+*源码*
+```html
+<style>
+    #border-color-1 {
+        border-style:solid;
+        border-color:red blue;
+        height: 100px;
+        width: 200px;
+        }
+</style>
+<div id="border-color-1">DOBE工场</div>
+```
+*效果*
+<div class="preview-code">
+    <div id="border-color-1">DOBE工场</div>
+</div>
+
+- **border**
+
+缩写边框属性设置在一个声明中所有的边框属性。
+
+可以设置的属性分别（按顺序）：border-width, border-style,和border-color.
+
+如果上述值缺少一个没有关系，例如border：＃FF0000;是允许的。
+
+属性值 | 描述
+:--| :--
+*border-width* | 指定边框的宽度
+*border-style* | 指定边框的样式
+*border-color* | 指定边框的颜色
+inherit	指定应该从父元素继承border属性值
+
+*源码*
+```html
+<style>
+    .border { margin: 10px; }
+    #border-1 { border:5px solid red; }
+    #border-2 { border:solid red; }
+    #border-3 { border:5px red; }
+</style>
+<div id="border-1">DOBE工场</div>
+```
+*效果*
+<div class="preview-code">
+    <div id="border-1" class="border">DOBE工场</div>
+    <div id="border-2" class="border">DOBE工场</div>
+    <div id="border-3" class="border">DOBE工场</div>
+</div>
+
+- **outline**
+
+outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+
+outline简写属性在一个声明中设置所有的轮廓属性。
+
+可以设置的属性分别是（按顺序）：outline-color, outline-style, outline-width
+
+如果不设置其中的某个值，也不会出问题，比如 outline:solid #ff0000; 也是允许的。
+
+属性值 | 描述
+:--| :--
+*outline-color* | 规定边框的颜色。
+*outline-style* | 规定边框的样式。
+*outline-width* | 规定边框的宽度。
+inherit	规定应该从父元素继承 outline 属性的设置。
+
+*源码*
+```html
+<style>
+    #outline-1 { border:1px solid red; outline:green dotted thick; }
+</style>
+<div id="border-1">DOBE工场</div>
+```
+*效果*
+<div class="preview-code">
+    <div id="outline-1">DOBE工场</div>
+</div>
+
+### 4.6 列表属性
+
+- **list-style-type**
+
+list-style-type 属性设置列表项标记的类型。
+
+属性值 | 描述
+:--| :--
+none | 无标记。
+disc | 默认。标记是实心圆。
+circle | 标记是空心圆。
+square | 标记是实心方块。
+decimal | 标记是数字。
+decimal-leading-zero | 0开头的数字标记。(01, 02, 03, 等。)
+lower-roman | 小写罗马数字(i, ii, iii, iv, v, 等。)
+upper-roman | 大写罗马数字(I, II, III, IV, V, 等。)
+lower-alpha | 小写英文字母The marker is lower-alpha (a, b, c, d, e, 等。)
+upper-alpha | 大写英文字母The marker is upper-alpha (A, B, C, D, E, 等。)
+lower-greek | 小写希腊字母(alpha, beta, gamma, 等。)
+lower-latin | 小写拉丁字母(a, b, c, d, e, 等。)
+upper-latin | 大写拉丁字母(A, B, C, D, E, 等。)
+hebrew | 传统的希伯来编号方式
+armenian | 传统的亚美尼亚编号方式
+georgian | 传统的乔治亚编号方式(an, ban, gan, 等。)
+cjk-ideographic | 简单的表意数字
+hiragana | 标记是：a, i, u, e, o, ka, ki, 等。（日文片假名）
+katakana | 标记是：A, I, U, E, O, KA, KI, 等。（日文片假名）
+hiragana-iroha | 标记是：i, ro, ha, ni, ho, he, to, 等。（日文片假名）
+katakana-iroha | 标记是：I, RO, HA, NI, HO, HE, TO, 等。（日文片假名）
+
+*源码*
+```html
+<style>
+    #list-style-type-1 { list-style-type:circle;}
+    #list-style-type-2 { list-style-type:upper-latin;}
+</style>
+<ul id="list-style-type-1">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ul>
+<ol id="list-style-type-2">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol>
+```
+*效果*
+<div class="preview-code">
+    <ul id="list-style-type-1">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+    <ol id="list-style-type-2">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+</div>
+
+- **list-style-position**
+
+list-style-position属性指示如何相对于对象的内容绘制列表项标记。
+
+属性值 | 描述
+:--| :--
+inside | 列表项目标记放置在文本以内，且环绕文本根据标记对齐。
+outside | 默认值。保持标记位于文本的左侧。列表项目标记放置在文本以外，且环绕文本不根据标记对齐。
+inherit | 规定应该从父元素继承 list-style-position 属性的值。
+
+*源码*
+```html
+<style>
+    #list-style-position-1 { list-style-position:inside;}
+    #list-style-position-2 { list-style-position:outside;}
+</style>
+<ul id="list-style-position-1">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ul>
+<ul id="list-style-position-2">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+```
+*效果*
+<div class="preview-code">
+    <ul id="list-style-position-1">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+    <ul id="list-style-position-2">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+</div>
+
+- **list-style-image**
+
+list-style-image 属性使用图像来替换列表项的标记。
+
+请始终规定一个 "list-style-type" 属性以防图像不可用。
+
+属性值 | 描述
+:--| :--
+*URL* | 图像的路径。
+none | 默认。无图形被显示。
+inherit | 规定应该从父元素继承 list-style-image 属性的值。
+
+*源码*
+```html
+<style>
+    #list-style-image-1 { list-style-image:url(../images/tubiao.png);}
+</style>
+<ul id="list-style-image-1">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ul>
+```
+*效果*
+<div class="preview-code">
+    <ul id="list-style-image-1">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+</div>
+
+- **list-style**
+
+list-style 简写属性在一个声明中设置所有的列表属性。
+
+可以设置的属性（按顺序）： list-style-type, list-style-position, list-style-image.
+
+可以不设置其中的某个值，比如 "list-style:circle inside;" 也是允许的。未设置的属性会使用其默认值。
+
+属性值 | 描述
+:--| :--
+*list-style-type* | 设置列表项标记的类型。
+*list-style-position* | 设置在何处放置列表项标记。
+*list-style-image* | 使用图像来替换列表项的标记。
+*initial* | 将这个属性设置为默认值。
+*inherit* | 规定应该从父元素继承 list-style 属性的值。
+
+*源码*
+```html
+<style>
+    #list-style-1 { list-style:square url(../images/tubiao.png);}
+</style>
+<ul id="list-style-1">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ul>
+```
+*效果*
+<div class="preview-code">
+    <ul id="list-style-1">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+</div>
 
 ## 盒子模型
 
