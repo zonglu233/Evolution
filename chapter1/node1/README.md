@@ -146,19 +146,19 @@ Web 浏览器 (如谷歌浏览器，Internet Explorer，Firefox，Safari) 读取
 
 ### 4.3 渲染引擎工作原理
 
-- 构建 DOM 树
+- **构建 DOM 树**
 
 渲染引擎开始解析 HTML 文档，并将文档的标签转化为内容树中的 DOM 节点
 
-- 构建 Render 树
+- **构建 Render 树**
 
 渲染引擎解析外部 CSS 文件及 style 标签中的样式信息，这些样式信息以及 HTML 中的可见性指令将被用来构建另一棵树——Render 树。Render 树由一些包含有颜色和大小等属性的矩形组成，它们将被按照正确的顺序显示到屏幕上。
 
-- 布局 Render 树
+- **布局 Render 树**
 
 Render 树构建好了之后，将会执行布局过程，它将确定每个节点在屏幕上的确切坐标。
 
-- 绘制 DOM 树
+- **绘制 DOM 树**
 
 渲染引擎会遍历所有的 DOM 节点，并使用 UI 后端层绘制。
 
@@ -169,19 +169,19 @@ Render 树构建好了之后，将会执行布局过程，它将确定每个节�
 
 ### 4.4 主流浏览器的渲染引擎工作流程
 
-- Webkit 工作流程
+- **Webkit 工作流程**
 
 Safari 和 Chrome 都使用 Webkit，Webkit 是一款开源渲染引擎，它本来是为 Linux 平台研发的，后来由 Apple 移植到 Mac 及 Windows 上。
 
 ![](images/webkit.png)
 
-- Gecko 工作流程
+- **Gecko 工作流程**
 
 Firefox 使用 Geoko——Mozilla 自主研发的渲染引擎。
 
 ![](images/gecko.jpg)
 
-- 总结
+- **总结**
 
 Webkit 和 Gecko 属于不同，但流程基本相同。 Gecko 将视觉化后的树称为“框架树”，Webkit 称为“渲染树”；对于元素的排放，Webkit 称为“布局 layout”，gecko 称为“重拍 reflow”；Gecko 在 html 解析和 DOM 树间添加了“内容槽”，用于生成 DOM 元素；将 DOM 树和样式信息构建渲染树的过程，Webkit 称为“附加”，Gecko 称为“框架结构”。
 
