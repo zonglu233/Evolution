@@ -1614,8 +1614,10 @@ z-index属性指定了一个元素的堆叠顺序，一个元素可以有正数�
 
 *效果*
 <div class="preview-code">
-    <div  class="z-indx-box z-indx-box-green"></div>
-	<div class="z-indx-box z-indx-box-pink z-indx-box-relative"></div>
+    <div>
+        <div  class="z-indx-box z-indx-box-green"></div>
+        <div class="z-indx-box z-indx-box-pink z-indx-box-relative"></div>
+    </div>
 </div>
 
 ## CSS图像精灵
