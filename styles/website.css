@@ -33,6 +33,11 @@ div.tips{
     border: 1px solid transparent;
 }
 
+div.tips div.qrcode{
+    margin-top: 15px;
+    text-align: center;
+}
+
 span.label{
     display: inline-block;
     padding: .25em .4em;
@@ -185,14 +190,64 @@ span.label-pill{
     margin: 20px;
 }
 
-.fish-box {
-    min-height: 100px;
+.fish-box{
     padding: 10px;
-    border: 2px solid grey;
-    background-color: lightblue;
+    background-color: lightseagreen;
 }
-#fish-float-1 {
-    width: 200px;
+
+.fish-block-1{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: brown;
+}
+.fish-block-2{
+    width: 100px;
     height: 100px;
-    background-color: #3A87AD;
+    background-color: pink;
 }
+.fish-block-3{
+    width: 200px;
+    height: 200px;
+    background-color:yellowgreen;
+}
+
+.position-static{
+    position: static;
+    border: 3px solid #73AD21;
+}
+
+.position-relative{
+    position:relative;
+    top:-50px;
+    background-color: pink;
+}
+
+.position-sticky-box{
+    overflow: auto;
+    height: 200px;
+    background-color: lightseagreen;
+}
+.position-sticky{
+    position:sticky;
+    top:20px;
+    background-color: lightcoral;
+}
+
+.z-indx-box{
+    height: 100px;
+    width: 100px;
+}
+.z-indx-box-green{
+    background-color: green;
+}
+.z-indx-box-pink{
+    background-color: pink;
+}
+.z-indx-box-relative{
+    position: relative;
+    top: -20px;
+    left: 20px;
+    z-index: -1;
+}
+

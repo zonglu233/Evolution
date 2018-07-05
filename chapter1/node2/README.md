@@ -1150,6 +1150,18 @@ inherit | 指定应该从父元素继承padding
     </div>
 </div>
 
+### 4.8 显示属性
+
+上节我们讲到 HTML 标签标签有块级元素和内联元素两个大类。但是，我们可以利用 CSS 的 display属性帮我们摆脱 HTML 标签归类的限制，自由地在不同标签/元素上应用我们需要的属性。
+
+属性值 | 描述
+:--| :--
+block | 显示为块级元素
+inline | 显示为内联元素
+inline-block | 显示为内联块元素，表现为同行显示并可修改宽高内外边距等属性
+none | 隐藏某个元素，且隐藏的元素不会占用任何空间。也就是说，该元素不但被隐藏了，而且该元素原本占用的空间也会从页面布局中消失。
+
+
 ## 5. 盒子模型
 
 盒子模型，英文即box model。无论是div、span、还是a都是盒子。
@@ -1283,6 +1295,7 @@ div 设置了 box-sizing:border-box 之后，div 的 width 属性就不是内容
     box-sizing:border-box;
 }
 ```
+
 大名鼎鼎的bootstrap也把box-sizing:border-box加入到它的 * 选择器中，我们为什么不这样做呢？
 
 ### 5.3 纵向 margin 的重叠
@@ -1334,177 +1347,282 @@ div 设置了 box-sizing:border-box 之后，div 的 width 属性就不是内容
 
 通过审查元素我们发现，两个 `<div>` 的纵向距离仍是 20px。
 
-## 6. 浮动与清除浮动
+## 6. 浮动
 
-在css2里，浮动（float）这个属性是个经典又诡异的一个属性，历来对它的争议就不断。
+float CSS属性指定一个元素应沿其容器的左侧或右侧放置，允许文本和行内元素环绕它。该元素从网页的正常流动中移除，尽管仍然保持部分的流动性（与绝对定位相反）。
 
 ### 6.1 浮动
 
-float 这个属性顾名思义，既然叫浮动，咱们不妨把它与小鱼在水中的浮动联系起来。
-
-我们可以这样假设，一个 HTML 文档就是一个水箱，文档中的元素就是各种各样的小鱼。而这水箱只有一层水，所以小鱼没有办法上下浮动，所有的鱼都在同一层游泳，他们都有各自的空间，而且也没有任何的上下层交叠。就像如下的示意图：
+我们可以这样假设，一个 HTML 文档就是一个水箱，文档中的元素就是各种各样的小鱼。而这水箱只有一层水，所以小鱼没有办法上下游动的，所有的鱼都在同一层，他们都有各自的空间，而且也没有任何的上下层交叠。就像如下的示意图：
 
 ![](images/fish.png)
 
-float 浮动，就恰好使原本在文档流这层水中的元素浮于水的表面（即脱离的文档流），说法不一定准确，因为浮动是否是真正的脱离的文档流还有待考究。
-
-因为一旦脱离的文档流后，该元素的占位空间自然也就没有了，所谓的没有占位空间，那么就应该是元素可以自由的交叠，像 position:absolute 的那种。也就是说，理想的情况，应该是这只鱼浮在水面上，下面的鱼可以在他下面游泳。比如这样：
+float 浮动，就恰好使原本在文档流这层水中的元素浮于水的表面（即脱离的文档流）。
 
 ![](images/fish_zhedie.png)
-
-但是事实并非如此。浮动的元素，高度会塌陷，这可以理解为占位空间消失造成的。
-
-但是，浮动的元素宽度仍然还在。也就是说，浮动的元素宽度处在一个“半塌陷”的状态，为什么说是“半塌陷”呢？下面以实例讲解一下。
 
 有这样的一个代码：
 ```html
 <style type="text/css">
-    .fish-box {
-        min-height: 100px;
+    .fish-box{
         padding: 10px;
-        border: 2px solid grey;
+        background-color: lightseagreen;
+    }
+    .fish-block-1{
+        width: 50px;
+        height: 50px;
+        padding: 10px;
         background-color: lightblue;
     }
-    #fish-float-1 {
-        width: 200px;
+    .fish-block-2{
+        width: 100px;
         height: 100px;
-        background-color: #3A87AD;
+        background-color: pink;
+    }
+    .fish-block-3{
+        width: 200px;
+        height: 200px;
+        background-color:yellowgreen;
     }
 </style>
 <div class="fish-box">
-    <div id="fish-float-1"></div>
-    <div id="fish-2">DOBE工场</div>
+    <p>DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场</p>
+    <div class="fish-block-1"></div>
+    <div class="fish-block-2"></div>
+    <div class="fish-block-3"></div>
 </div>
 ```
 <div class="preview-code">
     <div class="fish-box">
-        <div id="fish-float-1"></div>
-        <div id="fish-2">DOBE工场</div>
+        <p>DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场DOBE工场</p>
+        <div class="fish-block-1"></div>
+        <div class="fish-block-2"></div>
+        <div class="fish-block-3"></div>
     </div>
 </div>
 
-我们打开浏览器审查元素，设置 `<div id="fish-float-1"></div>`如下：
-```css
-float: left;
-/* position: absolute;
-visibility: hidden; */
-```
+我们打开浏览器审查元素，依次设置 `float: left;` 属性，发现浮动不会遮住行内元素，行内元素是围绕浮动的元素周围的。
 
-这是，我们发现，高度塌陷了，但是宽度貌似没有塌陷。也就是说，宽度的占位还在，因为`<div id="fish-2">DOBE工场</div>`并没有在 `<div id="fish-float-1"></div>`的下面重叠，还是能显示的。
+通过实践我们发现，浮动元素脱离了文档流，并不占据文档流的位置，自然父元素也就不能被撑开，所以没了高度。
 
-但是，再设置 .fish-2 的外边距为 margin-left: 250px;
+### 6.2 清除浮动
 
-我们发现，它并不是距离 .fish-float-1 为 250px。
+上文说到浮动会产生高度坍塌问题，那就需要我们清除浮动来解决。
 
-所以说，这就是半塌陷状况。
+我们平时说的“清除浮动”准确的说应该是“清除浮动与浮动之间的影响”，真正的清除浮动应该是 float:none; 
 
-按本人的理解，其实可以这样解释这个现象，这里要引入一个自创的词：“占位空间层级”。是的，引入占位空间层级这个概念之后，针对float这个元素，我们不妨可以这样假定：没有浮动的元素（即在文档流中的）的占位空间层级为0,有浮动的元素（指float:left或right;不包括none）的占位空间层级为1。这样就可以解释刚才`<div id="fish-2">DOBE工场</div>`的 padding 和 margin 值都是在层级为0的占位空间中解析的，而所有的浮动元素由于都在同一个层级的占位空间中，所以浮动元素之间的margin 和 padding 值的解析是和我们正常理解是一致的。
+比如上面的代码，我们审查元素，在 div.fish-block-3 后面增加一个 `<div class="fish-clear"></div>`，并设置 CSS 样式 `clear:both; `，我们发现 div.fish-box 高度不受影响了。
 
-至于为什么 `<div id="fish-2">DOBE工场</div>` 不和 `<div id="fish-float-1"></div>` 浮动块重叠，那是因为占位空间层级的分界线和文档流基线不是同一个！以下为一个简易的示意图：
+## 7. 定位
 
-![](images/fish_taxian.png)
+CSS position 属性用于指定一个元素在文档中的定位方式。
 
-### ### 6.2 清除浮动
+设定 position 属性后，可以设置top，right，bottom 和 left 属性则决定了该元素的最终位置。然而，这些属性无法工作，除非是先设定position属性。他们也有不同的工作方式，这取决于position不同的定位方法。
 
-说了这么多浮动的东西，其实我们平时接触最多的问题，还是清除浮动的问题。当初 CSS 的发明者之所以会创造 clear 这个属性，就是因为float 太过诡异，与文档流的层级标准都不统一，导致很难包容 float所导致的负面影响，所以只能再造一个 clear 属性，强制清除 float带来的后遗症。
+### 7.1 static 定位
 
-说到这里，我很同意一为同仁说的，我们平时说的“清除浮动”准确的说应该是“清除浮动造成的影响”，真正的清除浮动应该是 float:none; 
+HTML元素的默认值，即没有定位，元素出现在正常的流中。
 
-说到清除浮动造成的影响，又不得不说一下Dom元素的“包裹性”，因为在我们的实际编码中，用 clear 来清除浮动已经很少见了。因为经过人们不懈的实践，发现用包裹性来清除浮动造成的影响是更好的一种方式。
+静态定位的元素不会受到 top, bottom, left, right影响。
 
-- 通过overflow的方式
-
-```css
-.overflow-clear{
-    overflow:auto;/*或者 hidden,scroll,不包括visible */
-    _height:1%; /*设置高度是为了ie6获取haslayout */
-}
-```
-
-- display 的方式
-
-```css
-.display-clear{
-    display:inline-block;
-}
-```
-
-- position的方式
-
-```css
-.position-clear{
-    position:absolute;
-}
-```
-
-- 浮动方式
-
-```css
-.float-clear{
-    float:left; /*或者right，不是none就行*/
-}
-```
-
-- zoom 的方式
-
-```css
-.zoom-clear{
-    zoom:1;/* only for IE6.7 因为他们haslayout，ie8以后和标准浏览器都弱化了haslayout */
-}
-```
-
-- after伪类+content方式
-
-```css
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-/* Hides from IE-mac \*/
-.clearfix {height: 1%;}
-/* End hide from IE-mac */
-```
-
-上面几种方式都有清除浮动影响的作用，前四种是和最后一种在ie678和其他标准浏览器下都有效地方法，zoom因为用到了ie的haslayout，所以只在ie6/7的内核下才有效。
-
+*源码*
 ```html
-<div class="overflow-clear" style="padding:10px;border:2px solid #999">
-    <div style="float:left;width:200px;height:200px;background:#ccc;"></div>
-    <p style="margin:0;padding-left:250px">我是文案</p>
+<style type="text/css">
+    .position-static{
+        position: static;
+        border: 3px solid #73AD21;
+    }
+</style>
+<div class="position-static">
+    该元素使用了 position: static;
 </div>
 ```
+*效果*
+<div class="preview-code">
+    <div class="position-static">
+        该元素使用了 position: static;
+    </div>
+</div>
 
-可见确实是清除了浮动造成的影响。同样的可以试试其他的几种方式。
+### 7.2 fixed 定位
 
-清除浮动原理-包裹性：
+元素的位置相对于浏览器窗口是固定位置。
 
-说到包裹性，在这里面的鼻祖应该算是diaplay:inline-block;其他的像overflow，position:absolute,float这几个产生包裹性的原因，本质应该都是因为他们使Dom元素具有了类似inline-block的性质，所以，凡是设置了像display:inline-block或者overflow:hidden/scroll/auto或者position:absolute或者float:left/right这几个属性时，他们具有的包裹性都可以清除他们子元素浮动造成的影响。
+即使窗口是滚动的它也不会移动。
 
--haslayout
+*源码*
+```html
+<style type="text/css">
+    .position-fixed{
+        position:fixed;
+        top:50px;
+        right:50px;
+        height: 200px;
+        width:200px;
+        background-color: lightseagreen;
+    }
+</style>
+<div class="position-fixed">
+    该元素可以使用 position: fixed;
+</div>
+```
+*效果*
+<div class="preview-code">
+    <div class="position-fixed">
+        该元素可以使用 position: fixed;
+    </div>
+</div>
 
-　　这是ie私有的一个东西，不过随着ie8像标准浏览器靠近，它对haslayout的解析也弱化了很多。我们来看看用overflow，zoom，和after伪类这几个清除浮动的方式。
+### 7.3 relative 定位
 
-　　通过测试可以看到，display:inline-block,position:absolute,float:left/right 都把包裹性演绎的很好，但是overflow对包裹性的演绎没那么到位，所以导致ie6下必须强制获取Dom元素的haslayout才能生效。
+相对定位元素的定位是相对其正常位置。
 
-　　在ie下，只要我们对一个非inline级别的元素设置width或者height都可以触发他的haslayout，而且，在windows的ie下有个“auto-clearing”的特性：只要给容器一个尺寸，它能使容器自 动扩展以便适应它所包含的内容，即便给它的尺寸非常小，所以1%的height在任何情况都是扩展高度适应它的内容。这就是为什么在第一种方法中加了个ie6的hack是height:1%;原因。
+可以移动的相对定位元素的内容和相互重叠的元素，它原本所占的空间不会改变。
 
-　　同理，最后一个通过after伪类+content的方式最后要加个height:1%;也是这个原因。因为:after+content 只有在ie8和标准浏览器中支持。
+*源码*
+```html
+<style type="text/css">
+    .position-relative{
+        position:relative;
+        top:-50px;
+        background-color: pink;
+    }
+</style>
+<div>
+    该元素使用了正常定位
+</div>
+<div class="position-relative">
+    该元素使用了 position: relative;
+</div>
+```
+*效果*
+<div class="preview-code">
+    <div>
+        该元素使用了正常定位
+    </div>
+    <div class="position-relative">
+        该元素使用了 position: relative;
+    </div>
+</div>
 
-　　那么zoom，这个就不用多说了，这个是触发haslayout最典型的一种方式...
+### 7.4 absolute 定位
+
+绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于 `<html>`。
+
+absolute 定位使元素的位置与文档流无关，因此不占据空间。
+
+absolute 定位的元素和其他元素重叠。
+
+*源码*
+```html
+<style type="text/css">
+    .position-absolute{
+        position:absolute;
+        right:50px;
+        height: 200px;
+        width:200px;
+        background-color: lightseagreen;
+    }
+</style>
+<div class="position-absolute">
+    该元素可以使用 position: absolute;
+</div>
+```
+*效果*
+<div class="preview-code">
+    <div class="position-absolute">
+        该元素可以使用 position: absolute;
+    </div>
+</div>
+
+### 7.5 sticky 定位
+
+sticky 英文字面意思是粘，粘贴，所以可以把它称之为粘性定位。
+
+粘性定位是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位。
+
+*源码*
+```html
+<style type="text/css">
+    .position-sticky-box{
+        overflow: auto;
+        height: 200px;
+        background-color: lightseagreen
+    }
+    .position-sticky{
+        position:sticky;
+        top:20px;
+        background-color: lightcoral;
+    }
+</style>
+<div class="position-sticky">
+    该元素可以使用 position: sticky;
+</div>
+```
+*效果*
+<div class="preview-code">
+    <div class="position-sticky-box">
+        <p>尝试滚动页面。</p>
+        <p>注意: IE/Edge 15 及更早 IE 版本不支持 sticky 属性。</p>
+        <div class="position-sticky">我是粘性定位!</div>
+        <div style="padding-bottom:200px">
+        <p>滚动我</p>
+        <p>来回滚动我</p>
+        <p>滚动我</p>
+        <p>来回滚动我</p>
+        <p>滚动我</p>
+        <p>来回滚动我</p>
+        </div>
+    </div>
+</div>
+
+<div class='tips'>
+<strong>Tips!</strong><br/>
+元素固定的相对偏移是相对于离它最近的具有滚动框的祖先元素，如果祖先元素都不可以滚动，那么是相对于viewport来计算元素的偏移量
+</div>
 
 
+### 7.6 重叠的元素
 
-## 定位
+元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素。
 
-## 三角形
+z-index属性指定了一个元素的堆叠顺序，一个元素可以有正数或负数的堆叠顺序。
 
-## 导航条
+*源码*
+```html
+<style type="text/css">
+    .z-indx-box{
+		height: 100px;
+		width: 100px;
+	}
+	.z-indx-box-green{
+		background-color: green;
+	}
+	.z-indx-box-pink{
+		background-color: pink;
+	}
+	.z-indx-box-relative{
+		position: relative;
+		top: -20px;
+		left: 20px;
+		z-index: -1;
+	}
+</style>
+<div  class="z-indx-box z-indx-box-green"></div>
+<div class="z-indx-box z-indx-box-pink z-indx-box-relative"></div>
+```
+
+*效果*
+<div class="preview-code">
+    <div  class="z-indx-box z-indx-box-green"></div>
+	<div class="z-indx-box z-indx-box-pink z-indx-box-relative"></div>
+</div>
 
 ## CSS图像精灵
 
 ## 兼容性（CSS hack技巧与HTML注释语句）
 
 ## CSS整站规划
+
+
+
