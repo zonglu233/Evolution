@@ -1592,21 +1592,21 @@ z-index属性指定了一个元素的堆叠顺序，一个元素可以有正数�
 ```html
 <style type="text/css">
     .z-indx-box{
-		height: 100px;
-		width: 100px;
-	}
-	.z-indx-box-green{
-		background-color: green;
-	}
-	.z-indx-box-pink{
-		background-color: pink;
-	}
-	.z-indx-box-relative{
-		position: relative;
-		top: -20px;
-		left: 20px;
-		z-index: -1;
-	}
+        height: 100px;
+        width: 100px;
+    }
+    .z-indx-box-green{
+        background-color: green;
+    }
+    .z-indx-box-pink{
+        background-color: pink;
+    }
+    .z-indx-box-relative{
+        position: relative;
+        top: -20px;
+        left: 20px;
+        z-index: -1;
+    }
 </style>
 <div  class="z-indx-box z-indx-box-green"></div>
 <div class="z-indx-box z-indx-box-pink z-indx-box-relative"></div>
@@ -1620,9 +1620,35 @@ z-index属性指定了一个元素的堆叠顺序，一个元素可以有正数�
     </div>
 </div>
 
-## CSS图像精灵
+## 8. CSS Sprites
 
-## 兼容性（CSS hack技巧与HTML注释语句）
+图像拼合就是单个图像的集合。
+
+有许多图像的网页可能需要很长的时间来加载和生成多个服务器的请求。
+
+使用图像拼合会降低服务器的请求数量，并节省带宽。
+
+例如，某宝的分类栏，共有12个栏目，每个栏目都有相应的图标。传统的方式，每个图标是一个图片文件，加载页面需要请求12次。
+
+![](images/taobao_xiaoguo.png)
+
+CSS Sprites的方式，将所有的图标整合为一张图，加载页面需要请求1次即可。下图为从某宝抓取的图片资源。
+
+![](images/css_sprites.png)
+
+## 9. 兼容性
+
+### 9.1 CSS Hack
+CSS Hack是实现浏览器样式兼容的兜底办法，能不用就尽量不要使用。但是，针对一些浏览器的bug，比如老版本IE的bug，有时使用CSS Hack是不得已而为之的做法。
+
+比如，对于IE6-浏览器主要使用下划线_和中划线-这两种字符实现hack。如下所示，在IE6浏览器中，div的文本颜色为蓝色，其他浏览器则为红色。
+
+```css
+div{
+　　color:red;
+　　_color:blue;
+}
+```
 
 ## CSS整站规划
 
