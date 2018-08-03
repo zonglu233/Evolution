@@ -1,0 +1,1 @@
+gitbook build&& del /f /s /q /a D:\Gitbook\Evolution\*&& xcopy C:\Users\steedos\Documents\GitHub\Evolution\_book D:\Gitbook\Evolution /s /f /h /y

@@ -1,0 +1,482 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第七节 HTML5新功能和高级机制 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../node8/" />
+    
+    
+    <link rel="prev" href="../node6/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第一章 前端开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../node0/">
+            
+                <a href="../node0/">
+            
+                    
+                    章前序 前端简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../node1/">
+            
+                <a href="../node1/">
+            
+                    
+                    第一节 HTML基础课程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../node2/">
+            
+                <a href="../node2/">
+            
+                    
+                    第二节 CSS基础课程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../node3/">
+            
+                <a href="../node3/">
+            
+                    
+                    第三节 JavaScript入门与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../node4/">
+            
+                <a href="../node4/">
+            
+                    
+                    第四节 JavaScript高级实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../node5/">
+            
+                <a href="../node5/">
+            
+                    
+                    第五节 jQuery入门与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../node6/">
+            
+                <a href="../node6/">
+            
+                    
+                    第六节 常用库和前端框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第七节 HTML5新功能和高级机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../node8/">
+            
+                <a href="../node8/">
+            
+                    
+                    第八节 CSS3新特性详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../node9/">
+            
+                <a href="../node9/">
+            
+                    
+                    第九节 实战案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../chapter2/README.md">
+            
+                <span>
+            
+                    
+                    第二章 后端开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../chapter2/README.md">
+            
+                <span>
+            
+                    
+                    第二章 运维测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../chapter2/README.md">
+            
+                <span>
+            
+                    
+                    第二章 后端开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../end/">
+            
+                <a href="../../end/">
+            
+                    
+                    结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >第七节 HTML5新功能和高级机制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="html5&#x65B0;&#x529F;&#x80FD;&#x548C;&#x9AD8;&#x7EA7;&#x673A;&#x5236;">HTML5&#x65B0;&#x529F;&#x80FD;&#x548C;&#x9AD8;&#x7EA7;&#x673A;&#x5236;</h1>
+<p>HTML5&#x662F;&#x7528;&#x4E8E;&#x53D6;&#x4EE3;1999&#x5E74;&#x6240;&#x5236;&#x5B9A;&#x7684;HTML 4.01 &#x548C;XHTML 1.0 &#x6807;&#x51C6;&#x7684;HTML[1]&#xFF08;&#x6807;&#x51C6;&#x901A;&#x7528;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#xFF09;&#x6807;&#x51C6;&#x7248;&#x672C;&#xFF1B;&#x73B0;&#x5728;&#x4ECD;&#x5904;&#x4E8E;&#x53D1;&#x5C55;&#x9636;&#x6BB5;&#xFF0C;&#x4F46;&#x5927;&#x90E8;&#x5206;&#x6D4F;&#x89C8;&#x5668;&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x67D0;&#x4E9B;HTML5 &#x6280;&#x672F;&#x3002;HTML 5&#x6709;&#x4E24;&#x5927;&#x7279;&#x70B9;&#xFF1A;&#x9996;&#x5148;&#xFF0C;&#x5F3A;&#x5316;&#x4E86;Web &#x7F51;&#x9875;&#x7684;&#x8868;&#x73B0;&#x6027;&#x80FD;&#x3002;&#x5176;&#x6B21;&#xFF0C;&#x8FFD;&#x52A0;&#x4E86;&#x672C;&#x5730;&#x6570;&#x636E;&#x5E93;&#x7B49;Web &#x5E94;&#x7528;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<ol>
+<li>&#x65B0;&#x8BED;&#x4E49;&#x5316;&#x6807;&#x7B7E;&#xFF1A;section&#x3001;header&#x3001;footer&#x3001;nav&#x3001;article&#x3001;aside&#x3001;figure&#x3001;
+dialog&#x3001;time&#x3001;meter&#x3001;mark&#x3001;progress&#x3001;video</li>
+<li>&#x6700;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</li>
+<li>selectors API&#x9009;&#x53D6;&#x5143;&#x7D20;</li>
+<li>getElementsByClassName&#x9009;&#x53D6;class,&#x5305;&#x62EC;&#x5176;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#xFF1A;item namedItem</li>
+<li>window.JSON API : JSON.stringify() JSON.parse()</li>
+<li>Data-* : &#x6807;&#x8BB0;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;</li>
+<li>classList&#x63A5;&#x53E3;: item() contains() add() remove() toggle()</li>
+<li>&#x62D6;&#x62FD;&#x4E8B;&#x4EF6;: drag drog , &#x5305;&#x62EC;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;dragenter&#x3001;dragover&#x3001;</li>
+<li>dragenter&#x3001;dragleave&#x7B49;&#x3002;&#x5982;&#x4F55;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF1A;dataTransfer readAsDataURL
+&#x7B49;</li>
+<li>&#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x62D6;&#x62FD;&#x56FE;&#x7247;&#x7684;&#x6548;&#x679C;&#x7B49;</li>
+<li>canvas&#x753B;&#x56FE;:</li>
+<li>&#x6700;&#x57FA;&#x672C;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;getContext &#x753B;&#x65B9;&#x5757;&#x753B;&#x5706;&#x7B49;</li>
+<li>&#x8DEF;&#x5F84;&#x64CD;&#x4F5C;&#xFF1A;beginPath closePath moveTo lineTo&#x7B49;</li>
+<li>&#x6587;&#x5B57;&#x64CD;&#x4F5C;&#xFF1A;&#x9634;&#x5F71;&#xFF0C;&#x5B57;&#x4F53;&#x53D8;&#x6362;&#x7B49;</li>
+<li>&#x53D8;&#x6362;&#x64CD;&#x4F5C;&#xFF1A;&#x66F2;&#x7EBF;&#xFF0C;&#x53D8;&#x5F62;&#xFF0C;&#x7F29;&#x653E;&#xFF0C;&#x65CB;&#x8F6C;&#x7B49;</li>
+<li>&#x56FE;&#x7247;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;&#x80CC;&#x666F;&#xFF0C;&#x56FE;&#x7247;drawImage(),&#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#x65CB;&#x8F6C;&#x6548;&#x679C;</li>
+<li>audio video (&#x97F3;&#x9891;&#x89C6;&#x9891;)</li>
+<li>&#x4E0E;flash&#x7B49;&#x5176;&#x4ED6;&#x64AD;&#x653E;&#x7684;&#x533A;&#x522B;</li>
+<li>&#x4EC0;&#x4E48;&#x662F;&#xFF1A;&#x89C6;&#x9891;&#x5BB9;&#x5668;&#x3001;&#x7F16;&#x89E3;&#x7801;&#x5668;</li>
+<li>&#x64AD;&#x653E;&#x5143;&#x7D20;&#xFF1A;source controls type loop&#x7B49;</li>
+<li>&#x5E38;&#x7528;&#x63A7;&#x5236;&#x51FD;&#x6570;&#xFF1A;load() play() pause() canPlayType()</li>
+<li>&#x4ECB;&#x7ECD;&#xFF1A;&#x5A92;&#x4F53;&#x7279;&#x6027;&#x3001;&#x548C;video&#x5143;&#x7D20;&#x7684;&#x989D;&#x5916;&#x7279;&#x6027;&#x7B49;</li>
+<li>Forms API (&#x8868;&#x5355;&#x64CD;&#x4F5C;)</li>
+<li>&#x65B0;&#x7684;&#x8868;&#x5355;&#x5143;&#x7D20;: tel email url search range&#x7B49;</li>
+<li>&#x79FB;&#x52A8;&#x7AEF;&#x4E0E;PC&#x7AEF;&#x8868;&#x73B0;&#x7684;&#x5DEE;&#x5F02;&#x6027;</li>
+<li>&#x4ECB;&#x7ECD;&#x672A;&#x6765;&#x7684;forms&#x5143;&#x7D20;: number color datetime&#x7B49;</li>
+<li>&#x65B0;&#x7684;&#x8868;&#x5355;&#x51FD;&#x6570;&#xFF1A;placeholder autocomplete autofocus&#x7B49;</li>
+<li>&#x5236;&#x4F5C;&#x4E00;&#x4E2A;html5&#x7684;&#x8868;&#x5355;&#x9A8C;&#x8BC1;&#x6548;&#x679C;</li>
+<li>Geolocation (&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;)</li>
+<li>Geolocation API&#x4ECB;&#x7ECD;&#xFF1A;getCurrentPostion updateLocation&#x7B49;</li>
+<li>&#x7ECF;&#x7EAC;&#x5750;&#x6807;&#x4ECB;&#x7ECD;&#xFF0C;latitude(&#x7EAC;&#x5EA6;) longitude(&#x7ECF;&#x5EA6;) accuracy(&#x51C6;&#x786E;&#x5EA6;)&#x7B49;</li>
+<li>&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x6570;&#x636E;: IP&#x5730;&#x5740;&#x3001;GPS&#x5168;&#x7403;&#x5B9A;&#x4F4D;Wi-Fi&#x7B49;</li>
+<li>postMessage\xhr Lever 2 (&#x8DE8;&#x6E90;&#x6587;&#x6863;&#x6D88;&#x606F;&#x901A;&#x4FE1;)</li>
+<li>postMessage&#x7684;&#x64CD;&#x4F5C;: iframe&#x3001;&#x6807;&#x7B7E;&#x9875;&#x3001;&#x7A97;&#x53E3;&#x8FDB;&#x884C;&#x8DE8;&#x6E90;&#x901A;&#x4FE1;</li>
+<li>postMessage API&#x4ECB;&#x7ECD;: message data origin&#x7B49;</li>
+<li>XMLHttpRequest Lever 2&#x52A0;&#x5F3A;&#x7248;ajax&#x4ECB;&#x7ECD;</li>
+<li>&#x8DE8;&#x57DF;&#xFF1A;XMLHttpRequest&#x8BBE;&#x7F6E;</li>
+<li>&#x6700;&#x65B0;&#x7684;xhr Lever 2&#x4E8B;&#x4EF6;: progress(&#x8FDB;&#x5EA6;&#x4E8B;&#x4EF6;) load error&#x7B49;</li>
+<li>&#x62D6;&#x62FD;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x8FDB;&#x5EA6;&#x6761;&#x6548;&#x679C;</li>
+<li>&#x672C;&#x5730;&#x4E0E;&#x79BB;&#x7EBF;&#x5B58;&#x50A8;</li>
+<li>web Storage &#x4E0E;&#x4F20;&#x7EDF;cookie&#x7684;&#x533A;&#x522B;</li>
+<li>&#x672C;&#x5730;&#x5B58;&#x50A8;&#xFF1A;sessionStorage localStorage &#x7684;&#x4E0D;&#x540C;</li>
+<li>&#x7528;sessionStorage&#x89E3;&#x51B3;cookie&#x5B58;&#x5728;&#x7684;&#x5B58;&#x50A8;&#x95EE;&#x9898;</li>
+<li>&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x67E5;&#x770B;&#x5B58;&#x50A8;&#x60C5;&#x51B5;</li>
+<li>&#x79BB;&#x7EBF;&#x5B58;&#x50A8;: mainfest&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#xFF0C;&#x5305;&#x62EC;: network fallback&#x7B49;</li>
+<li>&#x79BB;&#x7EBF;&#x7684;&#x7F13;&#x5B58;&#x3001;&#x66F4;&#x65B0;&#x7684;&#x5904;&#x7406;&#x7EC6;&#x8282;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../node6/" class="navigation navigation-prev " aria-label="Previous page: 第六节 常用库和前端框架">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../node8/" class="navigation navigation-next " aria-label="Next page: 第八节 CSS3新特性详解">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第七节 HTML5新功能和高级机制","level":"1.2.8","depth":2,"next":{"title":"第八节 CSS3新特性详解","level":"1.2.9","depth":2,"path":"chapter1/node8/README.md","ref":"chapter1/node8/README.md","articles":[]},"previous":{"title":"第六节 常用库和前端框架","level":"1.2.7","depth":2,"path":"chapter1/node6/README.md","ref":"chapter1/node6/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"chapter1/node7/README.md","mtime":"2018-06-24T05:28:50.690Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-27T02:11:06.977Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
