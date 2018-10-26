@@ -14,8 +14,15 @@
     * [第八节 CSS3新特性详解](chapter1/node8/README.md)
     * [第九节 实战案例](chapter1/node9/README.md)
 
+<<<<<<< HEAD
 * [第二章 前端开发进阶](chapter2/README.md)
 * [第二章 运维测试](chapter2/README.md)
 * [第二章 后端开发](chapter2/README.md)
 * [结束](end/README.md)
+=======
+* [第二章 后端开发-尽情期待](chapter2/README.md)
+* [第二章 运维测试-尽情期待](chapter2/README.md)
+* [第二章 后端开发-尽情期待](chapter2/README.md)
+* [结束-尽情期待](end/README.md)
+>>>>>>> a8bdd00157b0febd9af90a98e68e229ffa891350
 

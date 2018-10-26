@@ -1,9 +1,19 @@
 {
+    "title" : "Coder Evolution",
     "styles": {
         "website": "styles/website.css",
         "ebook": "styles/ebook.css",
         "pdf": "styles/pdf.css",
         "mobi": "styles/mobi.css",
         "epub": "styles/epub.css"
-     }   
+     },
+     "language" : "zh-hans",
+     "plugins": [
+        "fontsettings",
+        "sharing",
+        "lunr",
+        "search",
+        "highlight",
+        "livereload"
+    ]
 }
