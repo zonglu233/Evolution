@@ -2,7 +2,7 @@
 
 * [前言](README.md)
 
-* [第一章 前端开发](chapter1/README.md)
+* [第一章 前端开发基础](chapter1/README.md)
     * [章前序 前端简介](chapter1/node0/README.md)
     * [第一节 HTML基础课程](chapter1/node1/README.md)
     * [第二节 CSS基础课程](chapter1/node2/README.md)
@@ -14,7 +14,7 @@
     * [第八节 CSS3新特性详解](chapter1/node8/README.md)
     * [第九节 实战案例](chapter1/node9/README.md)
 
-* [第二章 后端开发](chapter2/README.md)
+* [第二章 前端开发进阶](chapter2/README.md)
 * [第二章 运维测试](chapter2/README.md)
 * [第二章 后端开发](chapter2/README.md)
 * [结束](end/README.md)
